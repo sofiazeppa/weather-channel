@@ -1,5 +1,5 @@
 $.ajax({
-	url: 'http://api.openweathermap.org/data/2.5/weather?q=Buenos%20Aires&appid=95176c8edea30e33338e0eaddd53a916&units=metric&lang=es',
+	url: 'https://api.openweathermap.org/data/2.5/weather?q=Buenos%20Aires&appid=95176c8edea30e33338e0eaddd53a916&units=metric&lang=es',
 	success: function(data){
 		$(".city-name").append(data.name)
 		let rise = new Date(data.sys.sunrise * 1000).toLocaleTimeString()
@@ -23,7 +23,7 @@ $("input[type='text']").keypress( function(event) {
 		$(".city-name").empty()
 		$(".message").empty()
 		$.ajax({
-	  		url: 'http://api.openweathermap.org/data/2.5/weather?q='+$(this).val()+'&appid=95176c8edea30e33338e0eaddd53a916&units=metric&lang=es',
+	  		url: 'https://api.openweathermap.org/data/2.5/weather?q='+$(this).val()+'&appid=95176c8edea30e33338e0eaddd53a916&units=metric&lang=es',
 	  		beforeSend: function() {
 				$(".message").text("Espere...")
 			},
